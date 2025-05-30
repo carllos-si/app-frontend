@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // Usa a variável de ambiente
-const API_URL = process.env.REACT_APP_BACKEND_URL;
+const API_URL = process.env.REACT_APP_API_URL || 'https://app-backend-zj8i.onrender.com';
 
 export default function App() {
   const [offers, setOffers] = useState([]);
