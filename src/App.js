@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_URL = 'https://app-backend-zj8i.onrender.com'; // Seu backend
+// Usa a variável de ambiente
+const API_URL = process.env.REACT_APP_BACKEND_URL;
 
 export default function App() {
   const [offers, setOffers] = useState([]);
@@ -15,7 +16,7 @@ export default function App() {
 
   async function fetchOffers() {
     try {
-      const res = await axios.get(`${API_URL}/offers`);
+      const res = await axios.get(`${API_URL}/api/ofertas`);
       setOffers(res.data);
     } catch (error) {
       alert('Erro ao carregar ofertas');
@@ -25,7 +26,7 @@ export default function App() {
   async function createOffer(e) {
     e.preventDefault();
     try {
-      await axios.post(`${API_URL}/offers`, { title, description, price });
+      await axios.post(`${API_URL}/api/ofertas`, { title, description, price });
       setTitle('');
       setDescription('');
       setPrice('');
