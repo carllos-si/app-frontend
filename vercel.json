@@ -1,10 +1,8 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "build",
-  "framework": "create-react-app"
-  {
+  "framework": "create-react-app",
   "env": {
     "REACT_APP_BACKEND_URL": "https://app-backend-zj8i.onrender.com"
-         }
   }
 }
